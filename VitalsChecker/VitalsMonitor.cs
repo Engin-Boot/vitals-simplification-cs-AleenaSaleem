@@ -11,7 +11,7 @@ namespace VitalsChecker
     class VitalsMonitor
     {
         internal string message;
-        bool VitalIsNormal(Vitals one_vital)
+        internal bool VitalIsNormal(Vitals one_vital)
         {
             
             CultureInfo provider = new CultureInfo("en-us");
@@ -58,5 +58,3 @@ namespace VitalsChecker
         
     }
 }
-
-
