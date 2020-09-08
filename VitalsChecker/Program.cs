@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,9 +42,12 @@ namespace VitalsChecker
             VitalsMonitor v_monitor = new VitalsMonitor();
             AlertInSMS alertSMS = new AlertInSMS();
             AlertInIntercom alertIntercom = new AlertInIntercom();
+
             Checker.ExpectTrue(v_monitor.VitalsAreNormal(alertSMS,v_collection));
             v_collection.UpdateVitals();
             Checker.ExpectFalse(v_monitor.VitalsAreNormal(alertIntercom,v_collection));
+            v_collection.UpdateVitals();
+            Checker.ExpectFalse(v_monitor.VitalsAreNormal(alertIntercom, v_collection));
             Console.WriteLine("All ok");
         }
     }
