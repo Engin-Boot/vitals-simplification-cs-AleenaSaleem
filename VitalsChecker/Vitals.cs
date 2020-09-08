@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,11 +51,9 @@ namespace VitalsChecker
 			name = Console.ReadLine();
 			float lower = Single.Parse(Console.ReadLine());
 			float upper = Single.Parse(Console.ReadLine());
-			//Console. >> name >> lower >> upper;
 			this.vitalName = name;
 			this.lower = lower;
 			this.upper = upper;
 		}
 	}
 }
-
