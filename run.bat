@@ -1,5 +1,1 @@
-pushd "%~dp0"
-
-checker.exe
-
-popd
+dotnet run -p VitalsChecker < vitalsInput.txt
