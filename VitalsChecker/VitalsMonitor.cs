@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace VitalsChecker
 {
+    
     class VitalsMonitor
     {
-        bool VitalIsNormal(Vitals one_vital,string message)
+        internal string message;
+        bool VitalIsNormal(Vitals one_vital)
         {
+            
             CultureInfo provider = new CultureInfo("en-us");
             bool status = true;
             if (one_vital.getValue()<one_vital.getLower())
@@ -28,6 +31,7 @@ namespace VitalsChecker
                 message += one_vital.getValue().ToString(provider);
                 message += "\n";
                 status = false;
+                
             }
             return status;
         }
@@ -40,17 +44,18 @@ namespace VitalsChecker
         }
         internal bool VitalsAreNormal(IAlert alertNow,VitalsCollection v_collection)
         {
-            string message = "";
             int loopCounter = 0;
             bool status = true;
             for (loopCounter = 0; loopCounter < v_collection.allVitals.Length; loopCounter++)
             {
-                bool new_status = VitalIsNormal(v_collection.allVitals[loopCounter],message);
+                bool new_status = VitalIsNormal(v_collection.allVitals[loopCounter]);
                 status = status && new_status;
             }
             alertRequired(status, alertNow, message);
+            this.message = "";
             return status;
         }
         
     }
 }
+
