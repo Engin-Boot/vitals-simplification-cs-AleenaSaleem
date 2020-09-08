@@ -36,7 +36,7 @@ namespace VitalsChecker
     {
         static void Main(string[] args)
         {
-            VitalsCollection v_collection = new VitalsCollection(1);
+            VitalsCollection v_collection = new VitalsCollection(3);
             v_collection.Initialize();
             v_collection.UpdateVitals();
             VitalsMonitor v_monitor = new VitalsMonitor();
