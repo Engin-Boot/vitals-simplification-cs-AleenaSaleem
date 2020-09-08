@@ -1,1 +1,1 @@
-dotnet run -p VitalsChecker
+dotnet run -p VitalsChecker < vitalsInput.txt
